@@ -19,7 +19,7 @@ if (process.env.NODE_ENV === 'development') {
             name,
             email,
             password
-        })
+        }) 
         res.status(200).send(owner);
 
     })
