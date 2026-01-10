@@ -5,7 +5,7 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken")
 const cookie = require("cookie-parser");
 const {generateToken} = require('../utils/generateToken');
-const {registerUser} = require('../controllers/authController')
+const {registerUser, loginUser, logoutUser} = require('../controllers/authController')
 
 require('dotenv').config();
 
@@ -17,5 +17,7 @@ router.use(express.json());
 router.use(express.urlencoded({ extended: true }));
 
 router.post('/register', registerUser)
+router.post('/login', loginUser)
+router.get('/logout', logoutUser)
 
 module.exports = router;
